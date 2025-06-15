@@ -1,0 +1,7 @@
+<div class="menulist">
+   @for (p of menuList; track p; let i = $index) {
+      <div>
+        <button class="" [routerLink]="p.url">{{ p.title }}</button>
+      </div>
+   }
+</div>

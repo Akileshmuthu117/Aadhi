@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>ஆதி</ion-title >
+    </ion-toolbar>
+</ion-header>
+
+
+<!--<header class="app-header">
+    <button class="icon">☰</button>
+    <h1 class="brand">ஆதி</h1>
+    <button class="icon">🏠</button>
+  </header>
+  -->
+
+
+<div class="container">
+
+  <h3 class="title">தினசரி கத்தை விவர உள்ளீடு</h3>
+
+  <div class="form-group">
+    <label class="label">தொழிலாளர்</label>
+      <ng-select
+        [items]="options"
+        bindLabel="name"
+        bindValue="id"
+        [(ngModel)]="employee"
+        [searchable]="true"
+        placeholder="பெயர் உள்ளிடுக">
+      </ng-select>
+  </div>
+
+  <div class="form-group date-options">
+    <button [class.selected]="selectedDate === 'today'" (click)="selectDate('today')">இன்று </button>
+    <button [class.selected]="selectedDate === 'yesterday'" (click)="selectDate('yesterday')">நேற்று</button>
+    <button [class.selected]="selectedDate === 'dayBeforeYesterday'" (click)="selectDate('dayBeforeYesterday')">நேற்றைய முன்தினம்</button>
+  </div>
+
+  <div class="form-group">
+    <label>வெட்டிய கத்தை எண்ணிக்கை</label>
+    <input type="number" [(ngModel)]="leafCount" placeholder="எண்ணிக்கை" />
+  </div>
+
+ 
+
+  <button class="submit-btn" (click)="submit()">சமர்ப்பிக்கவும்</button>
+  <div class="message">
+    {{ submissionMessage }}
+  </div>
+
+  <footer class="footer">வெட்டுக்கூலி கத்தைக்கு: ரூ.6</footer>
+</div>
+

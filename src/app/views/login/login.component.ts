@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms'; 
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class LoginComponent  implements OnInit {
 
-  constructor() { }
+  constructor(private router : Router) { }
 
   ngOnInit() {}
 
@@ -17,8 +19,7 @@ export class LoginComponent  implements OnInit {
 
   onSubmit() {
     if (this.email && this.password) {
-      console.log('Login successful:', { email: this.email, password: this.password });
-      alert('Login successful!');
+      this.router.navigate(['home']);
     } else {
       alert('Please fill in all fields.');
     }
