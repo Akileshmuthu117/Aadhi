@@ -1,4 +1,13 @@
-<div class="menulist">
+<ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>ஆதி</ion-title >
+    </ion-toolbar>
+</ion-header>
+
+<div class="container">
    @for (p of menuList; track p; let i = $index) {
       <div>
         <button class="" [routerLink]="p.url">{{ p.title }}</button>

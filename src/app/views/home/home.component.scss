@@ -1,10 +1,24 @@
-.menulist{
-    display: grid;gap: 10px;justify-content: center;
+.container{
+  display: grid;
+  gap: 10px;
+  justify-content: center;
+  max-width: 600px;
+  margin: auto;
+  padding: 16px;
+}
+ 
+.container button{
+  width: 100%;
+  padding: 14px;
+  margin-top: 20px;
+  background-color: #2ecc71;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
 }
 
-.menulist button{
-    padding: 5px 15px;
-    color: white;
-    background-color: blue;
-    border-radius: 5px;
+ion-toolbar {
+  padding: 12px;
 }
