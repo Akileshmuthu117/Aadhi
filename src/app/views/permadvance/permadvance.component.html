@@ -7,20 +7,11 @@
     </ion-toolbar>
 </ion-header>
 
-
-<!--<header class="app-header">
-    <button class="icon">☰</button>
-    <h1 class="brand">ஆதி</h1>
-    <button class="icon">🏠</button>
-  </header>
-  -->
-
-
 <div class="container">
 
-  <h3 class="title">தினசரி கத்தை விவர உள்ளீடு</h3>
+  <h3 class="title">நிரந்தர முன்பண விவர உள்ளீடு</h3>
 
-  <div class="form-group">
+   <div class="form-group">
     <label class="label">தொழிலாளர்</label>
       <ng-select
         [items]="options"
@@ -30,7 +21,7 @@
         [searchable]="true"
         placeholder="பெயர் உள்ளிடுக">
       </ng-select>
-  </div>
+   </div>
 
   <div class="form-group date-options">
     <button [class.selected]="selectedDate === 'today'" (click)="selectDate('today')"><ion-icon *ngIf="selectedDate === 'today'" name="checkmark" slot="start"></ion-icon> இன்று</button>
@@ -39,17 +30,16 @@
   </div>
 
   <div class="form-group">
-    <label>வெட்டிய கத்தை எண்ணிக்கை</label>
-    <input type="number" [(ngModel)]="leafCount" placeholder="எண்ணிக்கை" />
+    <label class="label">கொடுக்கப்பட்ட பண மதிப்பு</label>
+    <input type="number" [(ngModel)]="amount" placeholder="எண்ணிக்கை">
   </div>
 
- 
+  <div class="error-message" *ngIf="messageText" [ngStyle]="{ color: messageColor }">
+    {{ messageText }}
+  </div>
 
   <button class="submit-btn" (click)="submit()">சமர்ப்பிக்கவும்</button>
-  <div class="message">
-    {{ submissionMessage }}
-  </div>
 
   <footer class="footer">வெட்டுக்கூலி கத்தைக்கு: ரூ.6</footer>
-</div>
 
+</div>

@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { DailybundleComponent } from './dailybundle/dailybundle.component';
 import { TempadvanceComponent } from './tempadvance/tempadvance.component';
+import { PermadvanceComponent } from './permadvance/permadvance.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'tempadvance',
     component: TempadvanceComponent
+  },
+  {
+    path: 'permadvance',
+    component: PermadvanceComponent
   }
 ];    
 
