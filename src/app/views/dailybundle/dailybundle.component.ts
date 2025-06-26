@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
+import { CommonModule } from '@angular/common';  
 
 @Component({
   selector: 'app-dailybundle',
   templateUrl: './dailybundle.component.html',
   styleUrls: ['./dailybundle.component.scss'],
   imports: [
-    NgSelectModule, FormsModule, IonicModule
+    NgSelectModule, FormsModule, IonicModule, CommonModule
   ]
 })  
 export class DailybundleComponent  implements OnInit {

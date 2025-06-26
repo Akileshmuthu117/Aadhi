@@ -1,3 +1,57 @@
-<p>
-  tempadvance works!
-</p>
+<ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>ஆதி</ion-title >
+    </ion-toolbar>
+</ion-header>
+
+<div class="container">
+
+  <h3 class="title">தற்காலிக முன்பண விவர உள்ளீடு</h3>
+
+   <div class="form-group">
+    <label class="label">தொழிலாளர்</label>
+      <ng-select
+        [items]="employeeData"
+        bindLabel="name"
+        bindValue="id"
+        [(ngModel)]="employee"
+        [searchable]="true"
+        placeholder="பெயர் உள்ளிடுக">
+      </ng-select>
+   </div>
+
+  <div class="form-group date-options">
+    <button [class.selected]="selectedDate === 'today'" (click)="selectDate('today')"><ion-icon *ngIf="selectedDate === 'today'" name="checkmark" slot="start"></ion-icon> இன்று</button>
+    <button [class.selected]="selectedDate === 'yesterday'" (click)="selectDate('yesterday')"><ion-icon *ngIf="selectedDate === 'yesterday'" name="checkmark" slot="start"></ion-icon> நேற்று</button>
+    <button [class.selected]="selectedDate === 'dayBeforeYesterday'" (click)="selectDate('dayBeforeYesterday')"><ion-icon *ngIf="selectedDate === 'dayBeforeYesterday'" name="checkmark" slot="start"></ion-icon> நேற்றைய முன்தினம்</button>
+  </div>
+
+  <div class="form-group">
+    <label class="label">முன்பண வகை</label>
+      <ng-select
+        [items]="advanceTypes"
+        bindLabel="name"
+        bindValue="id"
+        [(ngModel)]="selectedAdvance"
+        [searchable]="true"
+        placeholder="பெயர் உள்ளிடுக">
+      </ng-select>
+  </div>
+
+  <div class="form-group">
+    <label class="label">கொடுக்கப்பட்ட பண மதிப்பு</label>
+    <input type="number" [(ngModel)]="amount" placeholder="எண்ணிக்கை">
+  </div>
+
+  <div class="error-message" *ngIf="messageText" [ngStyle]="{ color: messageColor }">
+    {{ messageText }}
+  </div>
+
+  <button class="submit-btn" (click)="submit()">சமர்ப்பிக்கவும்</button>
+
+  <footer class="footer">வெட்டுக்கூலி கத்தைக்கு: ரூ.6</footer>
+
+</div>

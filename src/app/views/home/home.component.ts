@@ -18,7 +18,7 @@ export class HomeComponent  implements OnInit {
     this.menuList = [
     { title: 'Daily Bundle Details Enter', url: '/dailybundle'},
     { title: 'Temporary Advance Details', url: '/tempadvance'},
-    { title: 'Daily Bundle Details Enter', url: '/dailybundle'},
+    { title: 'Permanent Advance Details', url: '/permadvance'},
     { title: 'Login', url: '/login' }
   ];
 
