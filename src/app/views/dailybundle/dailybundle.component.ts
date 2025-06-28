@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
-import { CommonModule } from '@angular/common';  
+import { IonicModule, LoadingController } from '@ionic/angular';
+import { CommonModule, NgClass } from '@angular/common';  
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-dailybundle',
   templateUrl: './dailybundle.component.html',
   styleUrls: ['./dailybundle.component.scss'],
   imports: [
-    NgSelectModule, FormsModule, IonicModule, CommonModule
+    NgSelectModule, FormsModule, IonicModule, CommonModule, RouterLink, NgClass
   ]
 })  
 export class DailybundleComponent  implements OnInit {
@@ -28,10 +29,33 @@ export class DailybundleComponent  implements OnInit {
   submissionMessage = '';
   isSuccess = false;
   isError = false;
+  
 
-  constructor() { }
+  constructor(private loadingCtrl: LoadingController) { 
+  }
+  ngOnInit(){
 
-  ngOnInit() {}
+  }
+/*
+  async ngOnInit() {
+    const loading = await this.loadingCtrl.create({
+      message: 'Loading...',
+      duration: 3000,
+      spinner: 'circles'
+    });
+    await loading.present();
+    await loading.onDidDismiss();
+  }
+*/
+
+  pageClass = 'page-entering';
+
+  ionViewWillEnter() {
+    this.pageClass = 'page-entering';
+    setTimeout(() => {
+      this.pageClass = 'page-entered';
+    }, 500);
+  }
 
   selectDate(value: string) {
     this.selectedDate = value;

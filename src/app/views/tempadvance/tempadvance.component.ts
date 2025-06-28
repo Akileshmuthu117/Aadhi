@@ -2,21 +2,31 @@ import { Component, OnInit } from '@angular/core';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgClass } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-tempadvance',
   templateUrl: './tempadvance.component.html',
   styleUrls: ['./tempadvance.component.scss'],
   imports: [
-    NgSelectModule, FormsModule, IonicModule, CommonModule
-  ] 
+    NgSelectModule, FormsModule, IonicModule, CommonModule, RouterLink, NgClass
+  ]
 })
 export class TempadvanceComponent implements OnInit {
 
   constructor() { }
 
   ngOnInit() { }
+
+  pageClass = 'page-entering';
+
+  ionViewWillEnter() {
+    this.pageClass = 'page-entering';
+    setTimeout(() => {
+      this.pageClass = 'page-entered';
+    }, 500);
+  }
 
   employeeData = [
     { id: 1, name: 'Apple' },

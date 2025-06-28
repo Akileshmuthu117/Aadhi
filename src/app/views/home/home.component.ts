@@ -1,27 +1,37 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  imports: [RouterLink,IonicModule]
+  imports: [RouterLink, IonicModule, NgClass]
 })
-export class HomeComponent  implements OnInit {
+export class HomeComponent implements OnInit {
 
-  menuList : any;
+  menuList: any;
 
   constructor() { }
 
   ngOnInit() {
     this.menuList = [
-    { title: 'Daily Bundle Details Enter', url: '/dailybundle'},
-    { title: 'Temporary Advance Details', url: '/tempadvance'},
-    { title: 'Permanent Advance Details', url: '/permadvance'},
-    { title: 'Login', url: '/login' }
-  ];
+      { title: 'தினசரி கத்தை விவர உள்ளீடு', url: '/dailybundle' },
+      { title: 'தற்காலிக முன்பண விவர உள்ளீடு', url: '/tempadvance' },
+      { title: 'நிரந்தர முன்பண விவர உள்ளீடு', url: '/permadvance' },
+      { title: 'New Employee Creation', url: '/employee' },
+    ];
 
+  }
+
+  pageClass = 'page-entering';
+
+  ionViewWillEnter() {
+    this.pageClass = 'page-entering';
+    setTimeout(() => {
+      this.pageClass = 'page-entered';
+    }, 500);
   }
 
 }

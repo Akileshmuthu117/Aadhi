@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { DailybundleComponent } from './dailybundle/dailybundle.component';
 import { TempadvanceComponent } from './tempadvance/tempadvance.component';
 import { PermadvanceComponent } from './permadvance/permadvance.component';
+import { EmployeeComponent } from './employee/employee.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'permadvance',
     component: PermadvanceComponent
+  },
+  {
+    path: 'employee',
+    component: EmployeeComponent
   }
 ];    
 

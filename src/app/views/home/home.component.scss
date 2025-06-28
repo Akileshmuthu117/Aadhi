@@ -19,6 +19,12 @@
   font-size: 16px;
 }
 
-ion-toolbar {
-  padding: 12px;
+.page-entering {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
+
+.page-entered {
+  opacity: 1;
+}
+
