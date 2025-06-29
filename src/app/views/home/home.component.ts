@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
       { title: 'தினசரி கத்தை விவர உள்ளீடு', url: '/dailybundle' },
       { title: 'தற்காலிக முன்பண விவர உள்ளீடு', url: '/tempadvance' },
       { title: 'நிரந்தர முன்பண விவர உள்ளீடு', url: '/permadvance' },
-      { title: 'New Employee Creation', url: '/employee' },
+      { title: 'புதிய தொழிலாளர் விண்ணப்பம்', url: '/employee' },
     ];
 
   }

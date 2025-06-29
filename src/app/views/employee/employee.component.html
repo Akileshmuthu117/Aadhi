@@ -11,3 +11,33 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
+
+<div class="container" [ngClass]="pageClass">
+
+  <h2 class="title">புதிய தொழிலாளர் விண்ணப்பம்</h2>
+
+  <div class="form-group">
+    <label class="label">பயனாளர் பெயர்</label>
+    <input [(ngModel)]="empName" type="text" placeholder="பயனாளர் பெயர்">
+  </div>
+
+  <div class="form-group">
+    <label class="label">தொலைபேசி எண்</label>
+    <input [(ngModel)]="mobileNo" type="number" placeholder="தொலைபேசி எண்">
+  </div>
+
+  <div class="form-group">
+    <label class="label">வசிக்கும் ஊர்</label>
+    <ng-select [items]="locationList" bindLabel="name" bindValue="id" [(ngModel)]="empLoc" [searchable]="true"
+      placeholder="வசிக்கும் ஊர்">
+    </ng-select>
+  </div>
+
+  <button class="submit-btn" (click)="submit()">சமர்ப்பிக்கவும்</button>
+  <div class="message">
+    {{ submissionMessage }}
+  </div>
+
+  <footer class="footer">வெட்டுக்கூலி கத்தைக்கு: ரூ.6</footer>
+
+</div>
