@@ -7,6 +7,7 @@ import { DailybundleComponent } from './dailybundle/dailybundle.component';
 import { TempadvanceComponent } from './tempadvance/tempadvance.component';
 import { PermadvanceComponent } from './permadvance/permadvance.component';
 import { EmployeeComponent } from './employee/employee.component';
+import { EditbundlewageComponent } from './editbundlewage/editbundlewage.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'employee',
     component: EmployeeComponent
+  },
+  {
+    path: 'editbundlewage',
+    component: EditbundlewageComponent
   }
 ];    
 

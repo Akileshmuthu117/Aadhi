@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit {
       { title: 'தற்காலிக முன்பண விவர உள்ளீடு', url: '/tempadvance' },
       { title: 'நிரந்தர முன்பண விவர உள்ளீடு', url: '/permadvance' },
       { title: 'புதிய தொழிலாளர் விண்ணப்பம்', url: '/employee' },
+      { title: 'வெட்டுக்கூலி மதிப்பை மாற்றுதல்', url: '/editbundlewage' }
     ];
 
   }

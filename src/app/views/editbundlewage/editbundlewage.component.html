@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>ஆதி</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/home">
+        <ion-icon name="home-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<div class="container" [ngClass]="pageClass">
+
+  <h2 class="title">கத்தை வெட்டுக்கூலி மதிப்பை மாற்றுதல்</h2>
+
+  <div class="form-group">
+    <label class="label">தற்போதைய வெட்டுக்கூலி கத்தைக்கு: <strong>{{ currentRate }} ரூபாய்</strong></label>
+  </div>
+
+  <div class="form-group">
+    <label class="label">புதிய வெட்டுக்கூலி மதிப்பு கத்தைக்கு</label>
+    <input [(ngModel)]="newRate" type="number" placeholder="புதிய வெட்டுக்கூலி மதிப்பு">
+  </div>
+
+  <button class="submit-btn" (click)="submit()">சமர்ப்பிக்கவும்</button>
+  <p *ngIf="submissionMessage" class="error-text">
+    {{ submissionMessage }}
+  </p>
+  <footer class="footer">வெட்டுக்கூலி கத்தைக்கு: ரூ.6</footer>
+
+</div>

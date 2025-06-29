@@ -1,28 +1,14 @@
 <div class="login-container">
   <form (ngSubmit)="onSubmit()" class="login-form">
-    <h2>Login</h2>
+    <h2>உள்நுழைவு</h2>
     <div class="form-group">
-      <label for="email">Email</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        [(ngModel)]="email"
-        required
-        placeholder="Enter your email"
-      />
+      <label class="label" for="email">பயனாளர் எண்</label>
+      <input type="email" id="email" name="email" [(ngModel)]="email" required placeholder="பயனாளர் எண்" />
     </div>
     <div class="form-group">
-      <label for="password">Password</label>
-      <input
-        type="password"
-        id="password"
-        name="password"
-        [(ngModel)]="password"
-        required
-        placeholder="Enter your password"
-      />
+      <label class="label" for="password">கடவுச்சொல்</label>
+      <input type="password" id="password" name="password" [(ngModel)]="password" required placeholder="கடவுச்சொல்" />
     </div>
-    <button type="submit" class="btn">Login</button>
+    <button type="submit" class="submit-btn">உள்நுழைக</button>
   </form>
 </div>
